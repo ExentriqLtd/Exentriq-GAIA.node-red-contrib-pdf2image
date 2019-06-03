@@ -1,0 +1,22 @@
+{
+  "name": "pdf2image_wrapper",
+  "version": "1.0.0",
+  "description": "converts pdf to images using imagemagick",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ExentriqLtd/Exentriq-GAIA.node-red-contrib-pdf2image.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ExentriqLtd/Exentriq-GAIA.node-red-contrib-pdf2image/issues"
+  },
+  "homepage": "https://github.com/ExentriqLtd/Exentriq-GAIA.node-red-contrib-pdf2image#readme",
+  "dependencies": {
+    "pdf-image": "^2.0.0"
+  }
+}
