@@ -6,11 +6,11 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "node-red" : {
-        "nodes" : {
-            "pdf2image" : "index.js"
-        }
-    },
+  "node-red": {
+    "nodes": {
+      "pdf2image": "index.js"
+    }
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/ExentriqLtd/Exentriq-GAIA.node-red-contrib-pdf2image.git"
@@ -22,6 +22,6 @@
   },
   "homepage": "https://github.com/ExentriqLtd/Exentriq-GAIA.node-red-contrib-pdf2image#readme",
   "dependencies": {
-   
+    "pdf-image": "^2.0.0"
   }
 }
