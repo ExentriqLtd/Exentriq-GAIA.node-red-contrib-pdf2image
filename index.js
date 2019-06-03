@@ -4,7 +4,7 @@ module.exports = function(RED) {
         var node = this;
         node.on('input', function(msg) {
             //msg.payload = msg.payload.toLowerCase();
-            PDFImage = require("pdf-image");
+            PDFImage = require("pdf-image").PDFImage;
             node.warn(PDFImage)
             var pdfImage = new PDFImage(msg.inputFilePath);
 			pdfImage.convertPage(0).then(function (imagePath) {
