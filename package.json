@@ -1,5 +1,5 @@
 {
-  "name": "pdf2image_wrapper",
+  "name": "pdf2image",
   "version": "1.0.0",
   "description": "converts pdf to images using imagemagick",
   "main": "index.js",
@@ -17,6 +17,6 @@
   },
   "homepage": "https://github.com/ExentriqLtd/Exentriq-GAIA.node-red-contrib-pdf2image#readme",
   "dependencies": {
-    "pdf-image": "^2.0.0"
+   
   }
 }
