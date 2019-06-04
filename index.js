@@ -36,7 +36,7 @@ module.exports = function(RED) {
 	                node.warn("write " + filename);
                     var data = new Buffer(msg.payload,"binary");
                     
-                    
+                    try{
                     
                     fs.writeFile(filename + ".pdf", data, "binary", function (err) {
                     	node.warn(err);
@@ -51,6 +51,10 @@ module.exports = function(RED) {
 						});
                     	
                     });
+                    
+                    }catch(e){
+	                    node.warn(e)
+                    }
                     
                     //node.send(msg);
                     node.status({});
