@@ -39,7 +39,8 @@ module.exports = function(RED) {
                     try{
                     
                     fs.writeFile(filename + ".pdf", data, "binary", function (err) {
-                    	node.warn(err);
+                    	if(err)
+                    		node.warn(err);
                     	
                     	node.warn("convert " + filename);
                     	
