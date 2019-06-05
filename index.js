@@ -45,7 +45,9 @@ module.exports = function(RED) {
                     	node.warn("convert " + filename);
                     	
                     	PDFImage = require("pdf-image").PDFImage;
-			            var pdfImage = new PDFImage(filename + ".pdf");
+			            var pdfImage = new PDFImage(filename + ".pdf",convertOptions: {
+						    "-quality": "100"
+						  });
 						pdfImage.convertPage(0).then(function (imagePath) {
 						  msg.resultPath = imagePath;
 						  node.send(msg);
