@@ -46,8 +46,9 @@ module.exports = function(RED) {
                     	
                     	PDFImage = require("pdf-image").PDFImage;
 			            var pdfImage = new PDFImage(filename + ".pdf", {convertOptions: {
-						    "-quality": "100"
-						  }
+						    "-quality": "100",
+						  },
+						  convertExtension: "jpg"
 						});
 						pdfImage.convertPage(0).then(function (imagePath) {
 						  msg.resultPath = imagePath;
