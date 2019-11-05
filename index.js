@@ -9,9 +9,16 @@ module.exports = function(RED) {
         var node = this;
         this.reqTimeout = 120000;
         
+        var appConvertOptions = {
+						    "-quality": "100",
+						  }
+        
         node.on('input', function(msg) {
             var url = msg.url;
             var filename = msg.filename;
+            if(msg.convertOptions){
+	            appConvertOptions = msg.convertOptions;
+            }
             var opts = urllib.parse(url);
             node.warn("http "  + opts.path);
             opts.method = "GET";
@@ -45,9 +52,8 @@ module.exports = function(RED) {
                     	node.warn("convert " + filename);
                     	
                     	PDFImage = require("pdf-image").PDFImage;
-			            var pdfImage = new PDFImage(filename + ".pdf", {convertOptions: {
-						    "-quality": "100",
-						  },
+			            var pdfImage = new PDFImage(filename + ".pdf", {
+				          appConvertOptions,
 						  convertExtension: "jpg"
 						});
 						pdfImage.convertPage(0).then(function (imagePath) {
