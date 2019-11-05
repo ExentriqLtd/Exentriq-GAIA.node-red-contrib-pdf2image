@@ -10,7 +10,7 @@ var fs   = require("fs");
 var util = require("util");
 var exec = require("child_process").exec;
 
-let PDFImage = (function() {
+var PDFImage = (function() {
 	
 	let _name = 'PDFImage';
 	var node = null;
@@ -19,7 +19,7 @@ let PDFImage = (function() {
 	  
 	  node = nodeOrigin;
 	  
-	  node.warn("new init");
+	  node.warn("new init 2");
 	
 	  this.pdfFilePath = pdfFilePath;
 	
