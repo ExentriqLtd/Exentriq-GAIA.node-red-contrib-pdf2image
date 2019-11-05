@@ -253,19 +253,21 @@ module.exports = function(RED) {
         var node = this;
         this.reqTimeout = 120000;
         
-        this.appConvertOptions = {
-						    "-quality": "100",
-						  }
+        
         
         node.on('input', function(msg) {
-	        var that = this;
-            var url = msg.url;
+	        var url = msg.url;
             var filename = msg.filename;
+            
+            var appConvertOptions = {
+						    "-quality": "100",
+						  }
+            
             if(msg.convertOptions){
-	            this.appConvertOptions = msg.convertOptions;
+	            appConvertOptions = msg.convertOptions;
             }
             
-            node.warn("appConvertOptions " , this.appConvertOptions);
+            node.warn("appConvertOptions " , appConvertOptions);
             var opts = urllib.parse(url);
             node.warn("http "  + opts.path);
             opts.method = "GET";
@@ -300,7 +302,7 @@ module.exports = function(RED) {
                     	
                     	//PDFImage = require("./pdf-image-custom").PDFImage;
 			            var pdfImage = new PDFImage(filename + ".pdf", {
-				          that.appConvertOptions,
+				          appConvertOptions,
 						  convertExtension: "jpg"
 						}, node);
 						pdfImage.convertPage(0).then(function (imagePath) {
