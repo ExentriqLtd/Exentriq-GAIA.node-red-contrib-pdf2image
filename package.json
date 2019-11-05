@@ -23,6 +23,6 @@
   "homepage": "https://github.com/ExentriqLtd/Exentriq-GAIA.node-red-contrib-pdf2image#readme",
   "dependencies": {
     "fs-extra": "^8.0.1",
-    "pdf-image": "^2.0.0"
+    "pdf-image-custom": "^2.0.0"
   }
 }

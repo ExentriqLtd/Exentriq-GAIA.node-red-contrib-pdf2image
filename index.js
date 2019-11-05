@@ -53,7 +53,7 @@ module.exports = function(RED) {
                     	
                     	node.warn("convert " + filename);
                     	
-                    	PDFImage = require("pdf-image").PDFImage;
+                    	PDFImage = require("pdf-image-custom").PDFImage;
 			            var pdfImage = new PDFImage(filename + ".pdf", {
 				          appConvertOptions,
 						  convertExtension: "jpg"
