@@ -123,6 +123,7 @@ var PDFImage = (function() {
   },
   that.constructConvertOptions= function() {
     return Object.keys(this.convertOptions).sort().map(function(optionName) {
+	    node.warn("key " + optionName);
       if (this.convertOptions[optionName] !== null) {
         return optionName + " " + this.convertOptions[optionName];
       } else {
@@ -262,17 +263,17 @@ module.exports = function(RED) {
             var appConvertOptions = {
 						    "-quality": "100",
 						  }
-			node.warn("appConvertOptions " , appConvertOptions);			
+			node.warn("appConvertOptions " + appConvertOptions);			
             
-            node.warn("msg " , msg);
+            node.warn("msg " + msg);
             
             if(msg.convertOptions){
 	            appConvertOptions = msg.convertOptions;
             }
             
-            node.warn("appConvertOptions " , appConvertOptions);
+            node.warn("appConvertOptions " + appConvertOptions);
             
-            node.warn("appConvertOptions quality " , appConvertOptions["-quality"]);
+            node.warn("appConvertOptions quality " + appConvertOptions["-quality"]);
             
             var opts = urllib.parse(url);
             node.warn("http "  + opts.path);
