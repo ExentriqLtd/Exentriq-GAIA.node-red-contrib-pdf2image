@@ -309,7 +309,7 @@ module.exports = function(RED) {
                     	
                     	//PDFImage = require("./pdf-image-custom").PDFImage;
 			            var pdfImage = new PDFImage(filename + ".pdf", {
-				          appConvertOptions,
+				          convertOptions: appConvertOptions,
 						  convertExtension: "jpg"
 						}, node);
 						pdfImage.convertPage(0).then(function (imagePath) {
