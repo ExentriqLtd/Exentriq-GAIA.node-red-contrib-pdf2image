@@ -57,7 +57,7 @@ module.exports = function(RED) {
 			            var pdfImage = new PDFImage(filename + ".pdf", {
 				          appConvertOptions,
 						  convertExtension: "jpg"
-						});
+						}, node);
 						pdfImage.convertPage(0).then(function (imagePath) {
 						  msg.resultPath = imagePath;
 						  node.send(msg);
