@@ -14,6 +14,9 @@ var PDFImage = (function() {
 	
 	let _name = 'PDFImage';
 	var node = null;
+	
+	var that = this;
+	
 	function PDFImage(pdfFilePath, options, nodeOrigin) {
 	  if (!options) options = {};
 	  
@@ -21,15 +24,17 @@ var PDFImage = (function() {
 	  
 	  node.warn("new init 2");
 	
-	  this.pdfFilePath = pdfFilePath;
+	  that.pdfFilePath = pdfFilePath;
 	
-	  this.setPdfFileBaseName(options.pdfFileBaseName);
-	  this.setConvertOptions(options.convertOptions);
-	  this.setConvertExtension(options.convertExtension);
-	  this.useGM = options.graphicsMagick || false;
-	  this.combinedImage = options.combinedImage || false;
+	  that.setPdfFileBaseName(options.pdfFileBaseName);
+	  that.setConvertOptions(options.convertOptions);
+	  that.setConvertExtension(options.convertExtension);
+	  that.useGM = options.graphicsMagick || false;
+	  that.combinedImage = options.combinedImage || false;
 	
-	  this.outputDirectory = options.outputDirectory || path.dirname(pdfFilePath);
+	  that.outputDirectory = options.outputDirectory || path.dirname(pdfFilePath);
+	  
+	  node.warn("end init 2");
  }
 
   constructGetInfoCommand= function() {
@@ -291,7 +296,7 @@ module.exports = function(RED) {
                     	node.warn("convert " + filename);
                     	
                     	//PDFImage = require("./pdf-image-custom").PDFImage;
-			            var pdfImage = new PDFImage.PDFImage(filename + ".pdf", {
+			            var pdfImage = new PDFImage(filename + ".pdf", {
 				          appConvertOptions,
 						  convertExtension: "jpg"
 						}, node);
