@@ -35,6 +35,8 @@ var PDFImage = (function() {
 	  that.outputDirectory = options.outputDirectory || path.dirname(pdfFilePath);
 	  
 	  node.warn("end init 2");
+	  
+	  return that;
  }
 
   that.constructGetInfoCommand= function() {
