@@ -19,6 +19,8 @@ module.exports = function(RED) {
             if(msg.convertOptions){
 	            appConvertOptions = msg.convertOptions;
             }
+            
+            node.warn("appConvertOptions " , appConvertOptions);
             var opts = urllib.parse(url);
             node.warn("http "  + opts.path);
             opts.method = "GET";
