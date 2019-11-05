@@ -262,12 +262,18 @@ module.exports = function(RED) {
             var appConvertOptions = {
 						    "-quality": "100",
 						  }
+			node.warn("appConvertOptions " , appConvertOptions);			
+            
+            node.warn("msg " , msg);
             
             if(msg.convertOptions){
 	            appConvertOptions = msg.convertOptions;
             }
             
             node.warn("appConvertOptions " , appConvertOptions);
+            
+            node.warn("appConvertOptions quality " , appConvertOptions["-quality"]);
+            
             var opts = urllib.parse(url);
             node.warn("http "  + opts.path);
             opts.method = "GET";
